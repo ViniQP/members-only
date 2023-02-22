@@ -1,3 +1,4 @@
+<h1>Create Post</h1>
 <%= form_with model: @post do |form| %>
   <div>
     <%= form.label :title, "Title" %>
@@ -9,3 +10,4 @@
   </div>
   <%= form.submit :Submit%>
 <% end %>
+<%= link_to "Posts", posts_path %><br>

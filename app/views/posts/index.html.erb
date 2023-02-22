@@ -1,0 +1,22 @@
+<% if user_signed_in? %>
+<%= button_to "Create Post", new_post_path, method: :get %>
+<%= button_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= button_to "Sign-in", new_user_session_path, method: :get %>
+<% end %>
+
+<h1>Posts</h1>
+ <hr>
+<% @posts.each do |post| %>
+ 
+  <div>
+    <h3><%= post.title %></h3>
+    <p><%= post.content %></p>
+    <% if user_signed_in? %>
+      <p>Author: <%= post.author %></p>
+    <% else %>
+      <p>Author: Anonymous</p>
+    <% end %>
+  </div>
+  <hr>
+<% end %>

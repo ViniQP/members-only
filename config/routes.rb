@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :new, :create]
   # Defines the root path route ("/")
   # root "articles#index"
+  root 'posts#index'
 end
